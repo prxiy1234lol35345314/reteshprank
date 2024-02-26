@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>Please wait for the content to load</h5>
+    <h2 id="h51" style="display: none;">Reload the page when the video finishes.</h2>
+    <h2 id="h52" style="display: none;">Reload the page.</h2>
+    <h1 id="header"></h1>
+    <button id="btn1" disabled>Please Wait... Loading</button>
+    <video width="100%" height="100%" autoplay id="vid" oncontextmenu="return false;" style="display: none;">
+        <source src="funnyvid.mp4" type="video/mp4" />
+      </video>
+
+<script>
+    setTimeout(() => {
+        
+    
+if(localStorage.getItem("token")==1.5){
+    document.body.innerHTML="<h1>Ritesh, this was a prank lol<p/>We just renamed a contact to your dad's name<p/>and texted that.<p/></h1>";
+    localStorage.setItem("token", 2);
+}else if(localStorage.getItem("token")==1){
+    document.body.innerHTML="<h1>You didn't watch the whole video.<p/>Ask me for it later.</h1>";
+    localStorage.setItem("token", 2);
+}else if(localStorage.getItem("token")==2){
+    document.body.innerHTML="";
+}else if(localStorage.getItem("token")==0){
+
+
+
+
+var vid = document.getElementById("vid");
+var header = document.getElementById("header");
+var btn = document.getElementById("btn1");
+
+var clickHandler = 0;
+header.innerHTML = "Hi Ritesh, we have a video for you.";
+
+
+btn.addEventListener("click", function(){
+    if (clickHandler==0){
+        clickHandler++;
+        header.innerHTML = "Please turn your volume up so you can hear it.";
+        btn.disabled = true;
+        btn.innerHTML = "Click this after you turn your volume up.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==1){
+        clickHandler++;
+        header.innerHTML = "DO NOT CLOSE THIS WINDOW<p/>Because you can't open it again<p/>after the video has started.";
+        btn.disabled = true;
+        btn.innerHTML = "Click this when you finish reading.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==2){
+        clickHandler++;
+        header.innerHTML = "DO NOT CLOSE THIS WINDOW<p/>after the video finishes<p/>Reload the page, trust me, <p/>Just reload the page when<p/> you are prompted to do so.";
+        btn.disabled = true;
+        btn.innerHTML = "Click this when you finish reading.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==3){
+        clickHandler++;
+        header.innerHTML = "Watch this on a computer, not a phone.";
+        btn.disabled = true;
+        btn.innerHTML = "Click this when you finish reading.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==4){
+        clickHandler++;
+        header.innerHTML = "I put this video in a website<p/>because it is too big for discord.";
+        btn.disabled = true;
+        btn.innerHTML = "Click this when you finish reading.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==5){
+        clickHandler++;
+        header.innerHTML = "Enjoy!";
+        btn.disabled = true;
+        btn.innerHTML = "Click this to start watching<p/>You can't watch the video again<p/>So don't exit the page.";
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 1000);
+    }else if (clickHandler==6){
+        
+        
+        localStorage.setItem("token", 1);
+        btn.remove();
+        header.remove();
+        
+        document.getElementById("h51").style.display="block";
+        setTimeout(() => {
+            vid.style.display="block";
+            vid.play();
+            setTimeout(() => {
+                localStorage.setItem("token", 1.5);
+                alert("Unfortunately, we could not get this on video because your dad responded too late, but after some time, he said 'I will talk to him tomorrow. I will let him enjoy the rest of today, it is the last day of our cruise.'")
+                vid.remove();
+                document.getElementById("h51").style.display="none";
+                document.getElementById("h52").style.display="block";
+            }, 246000);
+        }, 1000);
+    }
+})
+
+setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = "Click this when you finish reading.";
+}, 1000);
+
+}
+    
+}, 1000);
+</script>
+<style>
+    *{
+        font-family: sans-serif, "Montserrat";
+    }
+    #vid{
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+</style>
+</body>
+</html>
